@@ -13,6 +13,9 @@ public class ASearchTest {
 	public void setup(){
 		as = new ASearch();
 		as.addEntry(new Entry("Andrew",111));
+		as.addEntry(new Entry("Ben", 543));
+		as.addEntry(new Entry("Bob", 278));
+		as.addEntry(new Entry("Brian", 419));;
 		as.addEntry(new Entry("Ewen",321));
 		as.addEntry(new Entry("Peter",123));
 		as.addEntry(new Entry("Roger",222));
@@ -41,6 +44,21 @@ public class ASearchTest {
 	public void testBinarySearchFail() {
 		// test the binary search method for someone who's not in the collection
 		fail("not implemented yet");
+	}
+	
+	@Test
+	public void testBinarySearchBen() {
+		assertEquals(543,as.linearSearch("Ben"));
+	}
+	
+	@Test
+	public void testBinarySearchBob() {
+		assertEquals(278,as.linearSearch("Bob"));
+	}
+	
+	@Test
+	public void testBinarySearchBrian() {
+		assertEquals(419,as.linearSearch("Brian"));
 	}
 
 }
