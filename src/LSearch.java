@@ -47,6 +47,8 @@ public class LSearch {
 	 * TODO Where N is the number of entries in the catalogue the (worst case) complexity is:
 	 *
 	 * O(?)
+	 * 
+	 * Because: TODO
 	 *  
 	 * @param name is the person name to look for in the catalogue
 	 * @return the number of that person, otherwise -1 to indicate an error
