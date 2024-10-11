@@ -48,17 +48,17 @@ public class ASearchTest {
 	
 	@Test
 	public void testBinarySearchBen() {
-		assertEquals(543,as.linearSearch("Ben"));
+		assertEquals(543,as.binarySearch("Ben"));
 	}
 	
 	@Test
 	public void testBinarySearchBob() {
-		assertEquals(278,as.linearSearch("Bob"));
+		assertEquals(278,as.binarySearch("Bob"));
 	}
 	
 	@Test
 	public void testBinarySearchBrian() {
-		assertEquals(419,as.linearSearch("Brian"));
+		assertEquals(419,as.binarySearch("Brian"));
 	}
 
 }
