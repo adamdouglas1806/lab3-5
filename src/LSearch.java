@@ -44,17 +44,44 @@ public class LSearch {
 	 * Uses linear search to look up a given name in the catalogue and returns the
 	 * number if the name is in the catalogue. Otherwise it returns -1.
 	 * 
-	 * TODO Where N is the number of entries in the catalogue the (worst case) complexity is:
+	 * Where N is the number of entries in the catalogue the (worst case) complexity is:
 	 *
-	 * O(?)
+	 * O(N)
 	 * 
-	 * Because: TODO
+	 * Because: The loop will continue to repeat until the end of the linked list. This means that the longer the linked list the more calculations will be required
+	 * and the code compile time will increase.
 	 *  
 	 * @param name is the person name to look for in the catalogue
 	 * @return the number of that person, otherwise -1 to indicate an error
 	 */
 	public int linearSearch(String name){
 		// your code
-		return -1; 
+		boolean found = false;
+		//New variable which will be used to check if a name was found.
+		Node current = headNode;
+		//New variable which represents the current head of the linked list.
+		Node position = null;
+		//New variable which will be used to identify the position of the name and number in the linked list.
+		
+		while (current != null) {
+			//A while loop which will continue to loop until the head is pointing towards null/the end of the list.
+			if (current.getValue().getName().equals(name)) {
+				//A condition which checks if the current node is equal to the passed through name.
+				found = true;
+				//If the condition is met then found will be set to true.
+				position = current;
+				//If the condition is met then the position is set to current (the current head).
+			}
+			current = current.getNextNode();
+			//Current (the current head) is set to the next node in the linked list.
+		}
+		
+		if (found == true) {
+			//A condition which checks if found is equal to true/if a name was found.
+			return position.getValue().getNumber();
+			//If the condition is met then the code will return an integer value which is the number associated with the passed through name.
+		}
+		return -1;
+		//If the condition was not met then -1 is returned.
 	}
 }
