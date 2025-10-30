@@ -24,18 +24,14 @@ public class LSearchTest {
 	@Test
 	public void testLinearSearchOK() {
 		// test the linear search method for someone who's in the collection
-		LSearch l = new LSearch();
-		//Creating a new instance of the class LSearch.
-		assertEquals("This person is in the collection", 123, l.linearSearch("Peter"));
+		assertEquals("This person is in the collection", 123, ls.linearSearch("Peter"));
 		//Tests if Peter is in the list by using a linear search. The expected result is 123 and the checked result is the number associated with peter entry.
 	}
 
 	@Test
 	public void testLinearSearchFail() {
 		// test the linear search method for someone who's not in the collection
-		LSearch l = new LSearch();
-		//Creating a new instance of the class LSearch.
-		assertEquals("This person is in the collection", -1, l.linearSearch("Adam"));
+		assertEquals("This person is in the collection", -1, ls.linearSearch("Adam"));
 		//Tests if Adam is not in the list by using a linear search. The expected result is -1 and it will try to check for an entry with the name Adam associated.
 	}
 

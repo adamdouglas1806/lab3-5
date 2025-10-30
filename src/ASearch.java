@@ -28,18 +28,42 @@ public class ASearch {
 	 * Uses linear search to look up a given name in the catalogue and returns the
 	 * number if the name is in the catalogue. Otherwise it returns -1.
 	 * 
-	 * TODO Where N is the number of entries in the catalogue the (worst case) complexity is:
+	 * Where N is the number of entries in the catalogue the (worst case) complexity is:
 	 *
-	 * O(?)
+	 * O(N)
 	 * 
-	 * Because: TODO
+	 * Because: If the element we wanted to find was at the very end of the array then we would have to go through every element in the array. Meaning that the larger
+	 * the array then the longer it will take to compile and calculate.
 	 *  
 	 * @param name is the person name to look for in the catalogue
 	 * @return the number of that person, otherwise -1 to indicate an error
 	 */
 	public int linearSearch(String name){
 		// your code
-		return -1;
+		boolean found = false;
+		//Setting up a variable to check if the name has been found in the list.
+		int position = 0;
+		//Setting up the value which will hold the position of the name.
+		
+		for (int i = 1; i < current; i++) {
+			//A for loop which will continue to loop as long as i is less then the current.
+			if (catalogue[i].getName().equals(name)) {
+				//Checks if the current indentation of catalogue is equal to the name which was passed through.
+				found = true;
+				//If the condition is met then change the found variable to true to indicate the name is in the list.
+				position = i;
+				//If the condition is met then the indentation will be stored to the variable position which will store the position where the name is in the array.
+			}
+		}
+		
+		if (found == true) {
+			//Checks if the name was found in the linear search.
+			return catalogue[position].getNumber();
+			//If the condition is met then the number in the entry will be returned.
+		}else {
+			return -1;
+			//Otherwise -1 will be returned if no name was found.
+		}
 	}
 
 	/*

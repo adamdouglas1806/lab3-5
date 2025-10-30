@@ -25,38 +25,30 @@ public class ASearchTest {
 	@Test
 	public void testLinearSearchOK() {
 		// test the linear search method for someone who's in the collection
-		ASearch a = new ASearch();
-		//Creating a new instance of the class ASearch.
-		assertEquals("This person is in the collection", 123, a.linearSearch("Peter"));
-		/*Test to make sure peter is in the list. It will call the linearSearch method in the ASearch class due to the instance from the previous line.
-		 * The expected return result is 123 and it will check the number that is in the same entry at "Peter".
+		assertEquals("This person is in the collection", 123, as.linearSearch("Peter"));
+		/*Test to make sure peter is in the list. It will call the linearSearch method in the ASearch class.
+		 *The expected return result is 123 and it will check the number that is in the same entry at "Peter".
 		 */
 	}
 
 	@Test
 	public void testLinearSearchFail() {
 		// test the linear search method for someone who's not in the collection
-		ASearch a = new ASearch();
-		//Creating a new instance of the class ASearch.
-		assertEquals("This person is not in the collection", -1, a.linearSearch("Rob Stewart"));
+		assertEquals("This person is not in the collection", -1, as.linearSearch("Rob Stewart"));
 		//Test to check if Rob Steward is not in the list. The expected return is -1 and it will check the result of the linearSearch method in ASearch class.
 	}
 	
 	@Test
 	public void testBinarySearchOK() {
 		// test the binary search method for someone who's in the collection
-		ASearch a = new ASearch();
-		//Creating a new instance of the class ASearch.
-		assertEquals("This person is in the collection", 111, a.binarySearch("Andrew"));
+		assertEquals("This person is in the collection", 111, as.binarySearch("Andrew"));
 		//Test to check if Andrew is in the list. The expected result is 111 and it will check for the number in the same entry as Andrew. It will use the BianrySearch method in ASearch class.
 	}
 	
 	@Test
 	public void testBinarySearchFail() {
 		// test the binary search method for someone who's not in the collection
-		ASearch a = new ASearch();
-		//Creating a new instance of the class ASearch.
-		assertEquals("This person is not in the collection", -1, a.binarySearch("Stewart Rob"));
+		assertEquals("This person is not in the collection", -1, as.binarySearch("Stewart Rob"));
 		//Test to check if Steward Rob is not in the list. The expected return is -1 and it will check the result of the BinarySearch method in ASearch class.
 	}
 	
