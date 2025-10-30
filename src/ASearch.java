@@ -73,11 +73,12 @@ public class ASearch {
 	 * Uses binary search to look up a given name in the catalogue and returns the
 	 * number if the name is in the catalogue. Otherwise it returns -1.
 	 * 
-	 * TODO Where N is the number of entries in the catalogue the (worst case) complexity is:
+	 * Where N is the number of entries in the catalogue the (worst case) complexity is:
 	 *
-	 * O(?)
+	 * O(log N)
 	 * 
-	 * Because: TODO
+	 * Because: The time it takes to compile the code will be affected by the size of the array since more calculations will be required. However, the program cuts the
+	 * size of array in half by each time which means there will be less steps when compared to the previous linear search, making the program more efficient.
 	 *  
 	 * @param first the array index of the start of search space
 	 * @param last the array index of the end of the search space
@@ -85,8 +86,31 @@ public class ASearch {
 	 * @return the persons phone number if their name is found or -1 otherwise
 	 */
 	private int binarySearch(int first,int last,String name){
-		// your code
-		return -1;
+		// your code		
+		if (first > last) {
+			return -1;
+		}
+		//Base case to stop the recursive function from infinite recursive.
+		
+		int middle = (first + (last - first) / 2);
+		//The variable middle will represent the current middle of the binary search.
+		
+		if (catalogue[middle].getName().compareTo(name) < 0) {
+			//A condition to check if the middle is smaller then the target.
+			return binarySearch((middle + 1), last, name);
+			//If the condition is met then the function will call itself but set the first to be the current middle + 1.
+		}else if (catalogue[middle].getName().compareTo(name) > 0) {
+			//A condition to check if the middle is larger then the target.
+			return binarySearch(first, (middle - 1), name);
+			//If the condition is met then the function will call itself but set the last to be the current middle - 1.
+		}else if (catalogue[middle].getName().compareTo(name) == 0) {
+			//A condition to check if the middle position is the position the target is located at.
+			return catalogue[middle].getNumber();
+			//If the condition is met then the number at the middle position will be returned.
+		}else {
+			return -1;
+			//If the name does not exist then -1 is returned.
+		}
 	}
 
 	// helper method exposed to the programmer
