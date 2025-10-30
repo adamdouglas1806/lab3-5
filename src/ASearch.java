@@ -77,8 +77,8 @@ public class ASearch {
 	 *
 	 * O(log N)
 	 * 
-	 * Because: The time it takes to compile the code will be affected by the size of the array since more calculations will be required. However, the program cuts the
-	 * size of array in half by each time which means there will be less steps when compared to the previous linear search, making the program more efficient.
+	 * Because: The time it takes to compile the code will be affected by the size of the array since more calculations will be required. However, the program cuts 
+	 * the size of array in half by each time which means there will be less steps when compared to the previous linear search, making the program more efficient.
 	 *  
 	 * @param first the array index of the start of search space
 	 * @param last the array index of the end of the search space
